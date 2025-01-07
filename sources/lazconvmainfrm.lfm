@@ -1,0 +1,164 @@
+object LazConvMainForm: TLazConvMainForm
+  Left = 350
+  Height = 551
+  Top = 250
+  Width = 978
+  Caption = 'Утилита конвертации модулей Delphi для Lazarus'
+  ClientHeight = 551
+  ClientWidth = 978
+  SessionProperties = 'DirectoryEdit1.Directory'
+  LCLVersion = '4.99.0.0'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object btnProcess: TButton
+    Left = 10
+    Height = 25
+    Top = 48
+    Width = 158
+    Caption = 'Сконвертировать файл'
+    TabOrder = 0
+    OnClick = btnProcessClick
+  end
+  object DirectoryEdit1: TDirectoryEdit
+    AnchorSideRight.Control = FileListBox1
+    Left = 8
+    Height = 23
+    Top = 5
+    Width = 715
+    Directory = 'DirectoryEdit1'
+    ShowHidden = False
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 7
+    MaxLength = 0
+    TabOrder = 1
+    Text = 'DirectoryEdit1'
+    OnChange = DirectoryEdit1Change
+  end
+  object FileListBox1: TFileListBox
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 730
+    Height = 127
+    Top = 4
+    Width = 243
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 4
+    BorderSpacing.Right = 5
+    Directory = 'C:\Lazarus\Lazarus-3\Lazarus\lazarus'
+    ItemHeight = 0
+    Mask = '*.dfm;*.pas;*lfm'
+    TabOrder = 2
+    OnChange = FileListBox1Change
+  end
+  object labFileName: TLabel
+    Left = 8
+    Height = 15
+    Top = 32
+    Width = 15
+    Caption = '???'
+  end
+  object memInfo: TMemo
+    AnchorSideBottom.Control = memErrors
+    Left = 8
+    Height = 278
+    Top = 136
+    Width = 964
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 25
+    ScrollBars = ssBoth
+    TabOrder = 3
+  end
+  object btnConvertDFMBlock: TButton
+    Left = 177
+    Height = 25
+    Top = 48
+    Width = 163
+    Caption = 'Сконвертировать блок DFM'
+    TabOrder = 4
+    OnClick = btnConvertDFMBlockClick
+  end
+  object memErrors: TMemo
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 9
+    Height = 108
+    Top = 439
+    Width = 964
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 4
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clRed
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ScrollBars = ssVertical
+    TabOrder = 5
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 15
+    Top = 422
+    Width = 124
+    Caption = 'Ошибки конвертации:'
+  end
+  object Label2: TLabel
+    Left = 13
+    Height = 15
+    Top = 75
+    Width = 545
+    Caption = 'Секция "USES" должна быть заранее очищена от комментариев и директив условной компиляции'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlue
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 13
+    Height = 15
+    Top = 89
+    Width = 485
+    Caption = 'Утилита не производит анализ PAS-файла, а выполняет простейшие текстовые замены.'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlue
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 13
+    Height = 15
+    Top = 118
+    Width = 488
+    Caption = 'При конвертации проекта вам придётся периодически вносить свои исправления в код.'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlue
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 13
+    Height = 15
+    Top = 104
+    Width = 424
+    Caption = 'Совместимость с Delphi останется (за счёт директив условной компиляции).'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlue
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'LazConvParams.ini'
+    Left = 376
+    Top = 40
+  end
+end

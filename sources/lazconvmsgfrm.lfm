@@ -1,0 +1,46 @@
+object MessageForm: TMessageForm
+  Left = 350
+  Height = 512
+  Top = 250
+  Width = 599
+  Caption = 'MessageForm'
+  ClientHeight = 512
+  ClientWidth = 599
+  LCLVersion = '4.99.0.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 472
+    Width = 587
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.Caption = 'Закрыть'
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 0
+    ShowButtons = [pbOK, pbClose]
+    object Button1: TButton
+      AnchorSideTop.Control = ButtonPanel1
+      AnchorSideTop.Side = asrCenter
+      Left = 0
+      Height = 25
+      Top = 5
+      Width = 120
+      Caption = 'В буфер обмена'
+      TabOrder = 4
+      OnClick = Button1Click
+    end
+  end
+  object Memo1: TMemo
+    Left = 0
+    Height = 466
+    Top = 0
+    Width = 599
+    Align = alClient
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+end
